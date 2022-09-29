@@ -8,7 +8,9 @@
 </head>
 <body>
 
-    <h1>Trains</h1>
+    <main>
+        @include('trainsListPage')
+    </main>
     
 </body>
 </html>
