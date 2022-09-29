@@ -12,7 +12,7 @@ class TrainsTableSeeder extends Seeder
      */
     public function run()
     {
-        $faker = \faker\Factory::create('it_IT');
+        $faker = \Faker\Factory::create('it_IT');
 
         for ($i=0; $i<10; $i++){
             $newTrain = new Train();
@@ -23,7 +23,7 @@ class TrainsTableSeeder extends Seeder
             $newTrain->departure_time = $faker->time('H:i');
             $newTrain->arrival_time = $faker->time('H:i');
             $newTrain->train_code = $faker->randomNumber(4, true);
-            $newTrain->train_wagon = $faker->randomNumber(4, true);
+            $newTrain->train_wagon = $faker->randomDigitNotNull();
             $newTrain->in_time = $faker->numberBetween(0, 1);
             $newTrain->deleted = $faker->numberBetween(0, 1);
             $newTrain->company = $faker->word();
